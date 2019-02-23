@@ -1,0 +1,32 @@
+<FORMS>
+	<FORM>
+		<NAME>DHS Information</NAME>
+		<FIELDS>
+			<TEXT>
+				<NAME>DHS Case Number</NAME>
+				<VALUE></VALUE>
+			</TEXT>
+			<TEXT>
+				<NAME>Court Case Number</NAME>
+				<VALUE></VALUE>
+			</TEXT>
+			<TEXT>
+				<NAME>DHS Worker</NAME>
+				<VALUE></VALUE>
+			</TEXT>
+			<TEXT>
+				<NAME>DHS Load Number</NAME>
+				<VALUE></VALUE>
+			</TEXT>
+		</FIELDS>
+	</FORM>
+	
+	<FORM>
+		<NAME>TEST</NAME>
+		<FIELDS>
+			<TEXT>
+				<NAME>Test</NAME>
+			</TEXT>
+		</FIELDS>
+	</FORM>
+</FORMS>
