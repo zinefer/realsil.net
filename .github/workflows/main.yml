@@ -1,0 +1,33 @@
+name: Publish Static Web App to Azure Blob Storage
+
+on: push
+
+jobs:
+  Build-and-Publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout main repo
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+
+    - name: Checkout resources cache
+      uses: actions/checkout@v2
+      with:
+        ref: resources
+        path: resources
+
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
+
+    - name: Install azcopy
+      uses: kheiakiyama/install-azcopy-action@v1
+      with:
+        version: 'v10'
+        creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
+    
+    - name: Publish content
+      run: ./Taskfile.sh deploy ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
