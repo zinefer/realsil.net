@@ -11,11 +11,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         submodules: true
-        
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
 
     - name: Install azcopy
       uses: kheiakiyama/install-azcopy-action@v1
